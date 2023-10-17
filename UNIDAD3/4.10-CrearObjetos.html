@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        function ImpimirDatos(){
+            document.write("Marca:"+this.marca);
+            document.write("Modelo:"+this.modelo);
+            document.write("Year:"+this.anno);
+
+        }
+
+
+
+        function coche(marca_in,modelo_in,anno_in){
+            this.marca=marca_in;
+            this.modelo=modelo_in;
+            this.anno=anno_in;
+            this.ImpimirDatos=ImpimirDatos;
+        }
+        let coches=new Array(4);
+        coches[0]=new coche("Ferrari","Scaglietti","2010");
+        coches[1]=new coche("BMW","Z4","1999");
+        coches[2]=new coche("Seat","Toledo","1999");
+        coches[3]=new coche("Fiat","500","1995");
+
+        for(i=0; i<coches.length;i++){
+            document.write("<b>Marca</b>:"+coches[i].marca+"-<b>Modelo</b>"+coches[i].modelo);
+        }
+
+        let nuevo_coche=new coche("Seat","Ibiza","1998");
+        nuevo_coche.ImpimirDatos();
+
+        const lenguajes = new Array('CSS','Javascript','HTML','php');
+        const framework = new Array('Reac', 'Vue','Angular');
+        const tecnologia = lenguajes.concat(frameworks);
+        let miArray1=lenguajes.join(",");
+
+        //declara una funcion fecha con un parametro de un array de numeros y que haga la suma de todos los numeros
+
+        function fecha(array){
+            let suma=0;
+            for(let i=0; i<array.length;i++){
+                suma+=array[i];
+            }
+            return suma;
+        
+        }
+        document.write(fecha([1,2,3,4,5,6,7,8,9,10]));
+        document.write("<br>");
+        document.write(fecha([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]));
+        document.write("<br>");
+        
+
+
+    </script>
+</body>
+</html>

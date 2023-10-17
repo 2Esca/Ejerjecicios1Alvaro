@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let palabras_spain=new Array("facebook","tuenti","hotmail","marca");
+        let palabras_swisland=new Array("facebook","youtube","hotmail","google");
+        let palabras_portugueses=new Array("facebook","youtube","hotmail","jogos","download");
+        let palabrasMasBuscadas=new Array(palabras_spain,palabras_swisland,palabras_portugueses);
+        document.write("<table border=1>");
+            for(i=0; i<palabrasMasBuscadas.length;i++){
+                document.write("<tr>");
+                document.write("<td><b> Estado"+i+"</b></td>");
+                for(j=0;j<palabrasMasBuscadas[i].length;j++){
+                    document.write("<td>"+palabrasMasBuscadas[i][j]+"</td>");
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>");
+    </script>
+</body>
+</html>

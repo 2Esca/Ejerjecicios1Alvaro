@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Función para calcular el valor del IVA al 21% y sumarlo al número ingresado
+function calcularIVA() {
+  // Obtener el número ingresado por el usuario
+  var numero = parseFloat(prompt("Ingrese un número:"));
+
+  // Verificar si se ingresó un número válido
+  if (isNaN(numero)) {
+    alert("Por favor, ingrese un número válido.");
+  } else {
+    // Definir el porcentaje de IVA al 21%
+    var porcentajeIVA = 0.21;
+
+    // Calcular el valor del IVA
+    var iva = numero * porcentajeIVA;
+
+    // Calcular el total con IVA
+    var totalConIVA = numero + iva;
+
+    // Mostrar el resultado al usuario
+    alert("Número ingresado: " + numero.toFixed(2) + "\nIVA al 21%: " + iva.toFixed(2) + "\nTotal con IVA: " + totalConIVA.toFixed(2));
+  }
+}
+
+// Llamar a la función para que el usuario pueda ingresar un número y calcular el IVA al 21%
+calcularIVA();
+
+    </script>
+</body>
+</html>

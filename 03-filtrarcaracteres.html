@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <h2>Filtrar entrada de texto y pasar a mayuscula</h2>
+        <div class="from-group">
+            <label for="dni">DNI</label>
+            <input type="text" name="dni" id="dni" autofocus>
+        </div>
+        <div class="from-group">
+            <label for="Telefono">Telefono</label>
+            <input type="text" name="Telefono" id="Telefono" autofocus>
+        </div>
+    </form>
+    <script>
+        function filtrarNum(string){
+            let out='';
+            const filtro = '1234567890';
+            for(var i=0;i<string.length;i++){
+                if(filtro.indexOf(string.charAt(i))!=-1){
+                    out+=string.charAt(i);
+                }
+            }
+            return out;
+        }
+
+        function filtrarAlfanumericos(string){
+            let out='';
+            const filtro = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            for(var i=0;i<string.length;i++){
+                if(filtro.indexOf(string.charAt(i))!=-1){
+                    out+=string.charAt(i);
+                }
+            }
+            return out;
+        }
+
+        document.querySelector("#Telefono").addEventListener("keyup", function(evento){
+            console.log(this);
+            this.value = filtrarNum(this.value);
+        })
+
+        document.querySelector("#dni").addEventListener("keyup", function(evento){
+            console.log(this);
+            this.value = filtrarAlfanumericos(this.value);
+            this.value=this.value.toUpperCase();
+        })
+    </script>
+</body>
+</html>

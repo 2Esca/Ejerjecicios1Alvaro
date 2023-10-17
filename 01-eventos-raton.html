@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="parrafo">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Quaerat quidem quibusdam
+            voluptatum, quod, quasi, quasi, quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+    </div>
+    <div class="parrafo">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Quaerat quidem quibusdam
+            voluptatum, quod, quasi, quasi, quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+    </div>
+    <div class="parrafo">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Quaerat quidem quibusdam
+            voluptatum, quod, quasi, quasi, quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+    </div>
+    <div class="parrafo">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Quaerat quidem quibusdam
+            voluptatum, quod, quasi, quasi, quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+    </div>
+    <div class="parrafo">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Quaerat quidem quibusdam
+            voluptatum, quod, quasi, quasi, quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+            quaerat quaerat quaerat quaerat quaerat quaerat quaerat
+    </div>
+    <script>
+        // Asignamos el manejador de eventos a varios elementos del DOM
+        const divs = document.querySelectorAll(".parrafo");
+    
+        const aleatorio = (max) => {
+            return Math.round(Math.random() * max);
+        }
+    
+        const cambiacolor = function (e) {
+            const color = new Array(aleatorio(255), aleatorio(255), aleatorio(255));
+            e.target.style.backgroundColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+        }
+    
+        divs.forEach((div) => {
+            div.addEventListener("mouseover", cambiacolor);
+        });
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onmouseover="alert('Has pasado por encima del boton')">Pasa por encima del boton</button>
+
+    <button id="btn1">Pulsame</button>
+    <button id="btn2">Entra y sal</button>
+    <button id="btn3">Ponte encima</button>
+    <button id="btn4">Coordenadas</button>
+
+    <label for="X">X</label>
+    <input type="text" id="X" name="X">
+
+    <label for="Y">Y</label>
+    <input type="text" id="Y" name="Y">
+
+    <script>
+        const btn1 = document.querySelector("#btn1");
+        const btn2 = document.querySelector("#btn2");
+        const btn3 = document.querySelector("#btn3");
+        const btn4 = document.querySelector("#btn4");
+
+        const inputX = document.querySelector("#X");
+        const inputY = document.querySelector("#Y");
+
+
+        //METODO RECOMENDADO
+
+        btn1.addEventListener("click", function () {
+            console.log(evento);
+            alert("Has pulsado el boton");
+        });
+
+        btn2.addEventListener("mouseout", function () {
+            console.log(evento);
+            alert("Has salido del boton");
+        });
+
+
+        //METODO MAS ANTIGUOS
+
+        btn3.onmouseover = function (evento) {
+            console.log(evento);
+            alert("Has pasado por encima del boton");
+        }
+
+        //METODO PRO
+
+        btn4.addEventListener("click", e => {
+            console.log(e);
+            console.log(`X:${e.pageX}, Y:${e.pageY}`);
+            inputX.value = e.pageX;
+            inputY.value = e.pageY;
+        })
+
+        //solucion mia ejercicio propuesto por profesor:
+
+        document.addEventListener("mousemove", (e) => {
+            inputX.value = e.pageX;
+            inputY.value = e.pageY;
+        });
+
+        //solucion profesor ejercicio propuesto
+
+        function coordenadas(x, y) {
+            inputX.value = x;
+            inputY.value = y;
+        }
+        document.addEventListener("mousemove", (e) => {
+            coordenadas(e.pageX, e.pageY);
+        })
+
+    </script>
+</body>
+
+</html>

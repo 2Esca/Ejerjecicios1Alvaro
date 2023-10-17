@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        const frutas=new Map([
+            ["manzanas",500],
+            ["platanos",300],
+            ["naranjas",200]
+        ]);
+
+        document.write(frutas.get("manzanas"));
+        document.write(frutas.get("platanos"));
+
+        const frutas2=new Map();
+        frutas2.set("manzanas",500);
+        frutas2.set("platanos",300);
+        frutas2.set("naranjas",200);
+        document.write(frutas2.get("manzanas"));
+        let tamano=frutas2.size;
+        frutas2.delete("platanos");
+        console.log(frutas2.has("manzanas"));
+
+        let text="";
+        frutas.forEach(function(valu,key) {
+        text += key + ' ' + value + "<br>"
+        });
+        document.write(text);
+
+        text="";
+        for(const x of frutas.keys()) {
+            text += x + "<br>";
+        }
+        
+        text="";
+        for(const x of frutas.values()) {
+            text += x + "<br>";
+        }
+
+
+        //creamos los objetos
+
+
+        const manzanas ={name: 'Manzanas'};
+        const platanos ={name: 'Platanos'};
+        const naranjas ={name: 'Naranjas'};
+
+        const frutas3=new Map();
+        frutas3.set(manzanas,500);
+        frutas3.set(platanos,300);
+        frutas3.set(naranjas,200);
+
+        document.write(frutas3.get(manzanas));  
+
+        frutas3.clear;
+        
+
+    </script>
+</body>
+</html>
