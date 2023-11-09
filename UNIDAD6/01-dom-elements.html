@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>PARRAFO1</p>
+    <p>PARRAFO2</p>
+    <p>PARRAFO3</p>
+
+<script>
+    document.addEventListener("DOMContentLoaded",e =>{
+        console.log(document);
+
+        //acceder al elemento raiz de la pagina
+        conts objHTML = document.documentElement;
+
+        //el primer hijo de dicho objeto seria el HEAD
+        const objHead = objHTML.firstChild;
+        //el ultimo objeto hijo seria el BODY
+        const objBody = objHTML.lastChild;
+
+        
+
+
+
+        //podemos acceder al padre de un elemento
+        const padre= cuartoHijoBody.parentNode;
+
+        console.log(padre);
+
+        //devuelve el tipo de nodo segun lo definido en las constantes
+        console.log(document.nodeType);        //9
+        console.log(objHTML.nodeType);          //1
+        console.log(objBody.nodeType);          //1
+        console.log(primerHijoBody.nodeType);  //3
+        console.log(cuartoHijoBody.nodeType); //1
+
+        const parrafos = objBody.getElementsByTagName("p");
+        console.log(parrafos);
+        console.log(parrafos[1]);
+        parrafos[1].style.color = "green"; 
+    })
+</script>
+</body>
+</html>
