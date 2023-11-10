@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contendor">
+        <h1>Ajax con fetch</h1>
+        <div class="contenido">
+
+
+        </div>
+        <button class="btn">GET!</button>
+    </div>
+
+    <script>
+        const contenido=document.querySelector(".contenido");
+        const btn=document.getElementById("btn");
+        const url = './user.json';
+
+        btn.addEventListener("click", e =>{
+            fetch(url)
+            .then(Response =>{
+                return Response.json();
+            })
+            .then((data) =>{
+                console.log(data);
+            })
+            .catch(error => {
+                console.log("hubo un error: "+error.message);
+            });
+        });
+    </script>
+</body>
+</html>
