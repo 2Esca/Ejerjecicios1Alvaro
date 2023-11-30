@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JK" crossorigin="anonymous">
+        <head>
+            <title>Login</title>
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+            <!-- CSS -->
+            <link rel="stylesheet" href="css.css">
+        </head>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+            <img src="awesome-itsfine.gif" alt="Awesome itsfine" class="img-fluid mx-auto d-block mb-4">
+                <h1 class="text-center mb-4">Login</h1>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="email">Email/Username</label>
+                        <input type="text" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div id="error-message" style="display: none;"></div>
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery y Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-4lJYJ5fQ1CfzJ4vKQJL0K4Q7s2VvLq5+Qz8b6q7+KJ3uZyOQ0j5J7JXZj7Jb5w5"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JK"
+        crossorigin="anonymous"></script>
+
+    <script>
+        const loginForm = document.getElementById('login-form');
+
+        loginForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', `https://jsonplaceholder.typicode.com/users?email=${email}`, true);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    const users = JSON.parse(xhr.responseText);
+                    if (users.length > 0 && users[0].address.zipcode === password) {
+                        window.open('blog.html', '_self');
+                    } else {
+                        const errorMessage = document.getElementById('error-message');
+                        errorMessage.textContent = 'Invalid email/username or password';
+                        errorMessage.style.display = 'block';
+                    }
+                } else {
+                    alert('Error');
+                }
+            };
+            xhr.send();
+        });
+    </script>
+</body>
+
+</html>
